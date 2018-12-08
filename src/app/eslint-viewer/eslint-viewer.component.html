@@ -1,0 +1,4 @@
+<div id='eslint-browser'>
+  <iframe *ngIf="href" id="browser-iframe" title="eslint-browser" [src]="href | safe"></iframe>
+  <span *ngIf="!href" id="placeholder" class="mat-h1"> Select a rule on the left to browse to the corresponding eslint documentation.</span>
+</div>
