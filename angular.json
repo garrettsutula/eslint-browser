@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/eslint-browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +30,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -118,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "eslint-browser"
+  "defaultProject": "eslint-browser",
+  "cli": {
+    "analytics": "ba1f309d-81b4-4b15-b62a-ccc70e8501a1"
+  }
 }
